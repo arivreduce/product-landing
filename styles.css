@@ -101,12 +101,20 @@ main {
   grid-template-columns: 1fr 52rem 1fr;
   padding-top: 1.5rem;
   gap: 4rem 0;
-  border: 1px solid red;
 }
 .offering-container {
   grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0 2rem;
 }
 .offering-container i {
   font-size: 2.5rem;
   color: var(--green);
+}
+/* DEMO STYLES */
+#Demo {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
