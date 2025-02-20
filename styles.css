@@ -39,10 +39,10 @@ header {
 }
 .nav-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 .logo-container {
@@ -56,7 +56,7 @@ header {
 }
 #nav-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 25rem;
 }
 #nav-bar a {
@@ -75,6 +75,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
 }
 #form h2 {
   margin-bottom: 1rem;
@@ -101,7 +102,7 @@ main {
 /* OFFERINGS STYLES */
 #Offerings {
   display: grid;
-  grid-template-columns: 1fr 52rem 1fr;
+  grid-template-columns: 1fr minmax(auto, 52rem) 1fr;
   padding-top: 1.5rem;
   gap: 4rem 0;
 }
@@ -115,6 +116,9 @@ main {
   font-size: 2.5rem;
   color: var(--green);
 }
+.offering-text p {
+  flex-wrap: wrap;
+}
 /* DEMO STYLES */
 #Demo {
   margin-top: 4rem;
@@ -124,15 +128,15 @@ main {
 /* PRICING STYLES */
 #Pricing {
   display: grid;
-  width: 52rem;
+  max-width: 62rem;
   margin: 0 auto;
   margin-top: 4rem;
-  border: 1px solid red;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
 }
 .product-card {
   border: 1px solid var(--header);
+  max-width: 18rem;
   width: 16rem;
   text-align: center;
 }
@@ -146,4 +150,60 @@ main {
 }
 .product-card p:not(.price) {
   padding: 0.25rem 0;
+}
+.product-card button {
+  margin: 2rem 0 1rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  background-color: var(--btn);
+  color: var(--btn-text);
+  border: transparent;
+  cursor: pointer;
+}
+/* FOOTER STYLES */
+footer {
+  max-width: 58rem;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  text-align: right;
+  padding: 1rem;
+  background-color: var(--gray);
+}
+.legal-links {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 1rem;
+}
+.legal-links p {
+  cursor: pointer;
+}
+.links-container p {
+  margin-top: 0.5rem;
+}
+@media screen and (max-width: 800px) {
+  #Pricing {
+    grid-template-columns: unset;
+    grid-template-rows: auto;
+    row-gap: 2rem;
+  }
+  .product-card {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  #nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    height: 10rem;
+  }
+  main {
+    top: 10rem;
+  }
+  .nav-center {
+    flex-direction: column;
+  }
 }
